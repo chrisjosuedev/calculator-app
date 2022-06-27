@@ -19,7 +19,12 @@ function App() {
 
   const calculateResult = () => {
     if (input) {
-      setInput(evaluate(input))
+      try {
+        setInput(evaluate(input))
+      } catch (e) {
+        alert('Please, write a valid expression')
+        setInput('')
+      }  
     } else {
       alert('Please, write values to evaluate the operation')
     }
